@@ -22,7 +22,7 @@ CREATE TABLE `tifosi`.`boisson` (
     `nom` VARCHAR(50) NOT NULL , 
     `id_marque` INT NOT NULL , 
     PRIMARY KEY (`id_boisson`), 
-    UNIQUE (`id_marque`)) 
+    INDEX (`id_marque`)) 
     ENGINE = InnoDB;
 
 CREATE TABLE `tifosi`.`ingredient` (
@@ -48,8 +48,8 @@ CREATE TABLE `tifosi`.`menu` (
     `id_boisson` INT NOT NULL , 
     `id_foccacia` INT NOT NULL , 
     PRIMARY KEY (`id_menu`), 
-    UNIQUE (`id_boisson`), 
-    UNIQUE (`id_foccacia`)) 
+    INDEX (`id_boisson`), 
+    INDEX (`id_foccacia`)) 
     ENGINE = InnoDB;
 
 CREATE TABLE `tifosi`.`comprend` (
@@ -59,7 +59,7 @@ CREATE TABLE `tifosi`.`comprend` (
     `id_foccacia` INT NOT NULL , 
     PRIMARY KEY (`id_comprend`), 
     INDEX (`id_foccacia`), 
-    UNIQUE (`id_ingredient`)) 
+    INDEX (`id_ingredient`)) 
     ENGINE = InnoDB;
 
 CREATE TABLE `tifosi`.`foccacia` (
